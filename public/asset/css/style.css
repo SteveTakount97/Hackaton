@@ -17,9 +17,6 @@ header{
     margin: 0px 0px 30px 0px;
 }
 
-.seach{
-    display: none;
-}
 nav a:hover {
     color: #0065fc;
     border-bottom: solid #0065fc 4px;
