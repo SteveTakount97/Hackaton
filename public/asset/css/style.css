@@ -12,7 +12,10 @@
 .fa-solid {
     color: var(--main-color);
 }
-
+body{
+    max-width: 1440px;
+    margin: 20px;
+}
 /* Code de l'entête */
 header{
     display: flex;
@@ -33,6 +36,7 @@ nav a:hover {
 }
 a{
     text-decoration: none;
+    color: black;
 }
 
 .nav-list {
@@ -102,4 +106,78 @@ ul{
     flex-direction: column;
     gap: 15px;
     margin-bottom: 0;
+}
+
+/*style form insription*/
+
+.inscription-backroung{
+    background-color: #DEEBFF;
+}
+h2 {
+    width: 100px;
+   height: 36px;
+   font-size: 30px;
+   font-weight: 700;
+   line-height: 36px;
+   text-align: center;
+   margin: auto;
+   padding-bottom: 30px;
+   color: black;
+
+}
+section{
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+}
+form{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 40vw;
+}
+label{
+
+   font-family: Work Sans;
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 16.42px;
+   text-align: left;
+
+   color: black; 
+}
+input{
+    width: 379px;
+   height: 45px;
+   border: none;
+
+}
+.button {
+    width: 179px;
+  height: 36px;
+  border: none;
+  border-radius: 60px;
+  color: #FFFFFF;
+  background-color: black;
+}
+.button-login{
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding-top: 10px;
+}
+.button1{
+    width: 179px;
+  height: 16px;
+  border: none;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.42px;
+  text-align: left;
+  color: #3D3D3D;
+  background: none;
+  padding-left: 16px;
+  text-decoration: underline;
 }
