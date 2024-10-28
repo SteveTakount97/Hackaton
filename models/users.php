@@ -48,6 +48,7 @@ class User{
             }
         }
     }
+
     public function EditProfil($id, $password, $prenom, $age, $pseudo)
     {
         $query = $this->connection->getConnection()->prepare("UPDATE user SET name = ?, age = ?, pseudo = ?, password = ? WHERE id = ?");
