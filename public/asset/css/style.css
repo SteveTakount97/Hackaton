@@ -167,17 +167,3 @@ input{
 	gap: 20px;
 	padding-top: 10px;
 }
-.button1{
-    width: 179px;
-  height: 16px;
-  border: none;
-  font-family: Work Sans;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16.42px;
-  text-align: left;
-  color: #3D3D3D;
-  background: none;
-  padding-left: 16px;
-  text-decoration: underline;
-}
