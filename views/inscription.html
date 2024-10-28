@@ -13,13 +13,40 @@
          </a>
              <nav>
                  <ul class="nav-list">
-                     <li><a href="" class="lien">Inscription</a></li>
+                     <li><a href="index.html" class="lien">Acceuil</a></li>
                      <li><a href="" class="lien">Connexion</a></li>
                  </ul>
              </nav> 
     </header>
-    <main class="main-background">
-        <h1 id="carousel-title">BIENVENU DANS NOTRE BLOC ANIMALIER</h1>
+    <main>
+        <section>
+            <form action="/login"  class="login-form" id="loginform">
+              <h2>Inscription</h2>
+               <div>
+                  <label for="email">Prenom:</label><br>
+                  <input type="text" id="Prenom" name="Prenom" required>
+               </div>
+               <div>
+                <label for="password">Age:</label><br>
+                <input type="number" id="number" name="Age" required>
+             </div>
+             <div>
+                <label for="password">Pseudo:</label><br>
+                <input type="email" id="email" name="email" required>
+             </div>
+               <div>
+                  <label for="password">Mot de passe:</label><br>
+                  <input type="password" id="password" name="password" required>
+               </div>
+               <div class="button-login">
+                  <button type="submit" class="button">S'inscrire</button>
+                  <a href="acceuil.html">
+                    <button type="button" class="button">Retour à la page d'Acceuil</button>
+                 </a>
+               </div>
+           </form>
+       </section>
+        
     </main>
     
     <footer class="section-footer">
@@ -47,5 +74,5 @@
         </div>
     </footer>
 </body>
-<script src="../public/asset/script/script.js"></script>
+
 </html>
