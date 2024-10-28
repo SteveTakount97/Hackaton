@@ -41,7 +41,7 @@ class Connect{
         $userPost -> user userConnect($user, $password);
 
         // inclusion du fichier connect.php qui est dans le dossier views
-        require('./views/connect.php');
+        header("Location: index.php?action=?");
     }
     // utilisé pour charger des vues ou des composants
     public function page(){

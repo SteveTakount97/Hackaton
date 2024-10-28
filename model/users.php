@@ -9,14 +9,20 @@ require_once("bdd/database.php");
 // use = importer et de simplifier l'utilisation de getDatabase dans le code
 use Application\bdd\database\getDataBase;
 
-// je crée ma class user qui définira
+// on représente un modèle d'utilisateur
 class User{
+    // string = manipuler du texte en PHP
     public string $id;
     public string $user;
     public string $password;
 }
 
+// je définis une class pour les publications des utilisateurs
 class UserPost{
+    //  j'établie une connection avec la database
+    public getDataBase $connection;
+
+    // 
     public function userDetails($id){
         $query = $this -> connection -> getDataBase() -> prepare(
             "SELECT $ FROM users WHERE id =?"
