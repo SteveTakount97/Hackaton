@@ -20,26 +20,26 @@
     </header>
     <main>
         <section>
-            <form action=""  class="login-form" id="loginform">
+            <form action="inscription.php" method="post" class="login-form" id="loginform">
               <h2>Inscription</h2>
                <div>
                   <label for="email">Prenom:</label><br>
-                  <input type="text" id="Prenom" name="Prenom" required>
+                  <input type="text" id="Prenom" name="Prenom" placeholder="saisir votre Prenom"  required>
                </div>
                <div>
                 <label for="password">Age:</label><br>
-                <input type="number" id="number" name="Age" required>
+                <input type="number" id="number" name="Age" placeholder="saisir votre âge" required>
              </div>
              <div>
                 <label for="password">Pseudo:</label><br>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="saisir votre email" required>
              </div>
                <div>
                   <label for="password">Mot de passe:</label><br>
-                  <input type="password" id="password" name="password" required>
+                  <input type="password" id="password" name="password" placeholder="saisir votre mot de passe" required>
                </div>
                <div class="button-login">
-                  <button type="submit" class="button">S'inscrire</button>
+                  <button type="submit" name="submit" class="button">S'inscrire</button>
                </div>
            </form>
        </section>
