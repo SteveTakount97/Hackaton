@@ -1,5 +1,6 @@
 <?php
 
+
 class Database
 {
     private $pdo;
@@ -12,7 +13,7 @@ class Database
             $this->pdo = new PDO($dsn, DB_USER, DB_PASS);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        }catch (PDOException $e)
+        }catch (\PDOException $e)
         {
             die("Erreur de connection:" . $e->getMessage());
         }

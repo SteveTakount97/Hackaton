@@ -3,16 +3,10 @@
     font-family: 'Raleway', sans-serif;
 }
 
-:root {
-    --main-color: #0065FC;
-    --main-bg-color: #F2F2F2;
-    --filter-bg-color: #DEEBFF;
+body{
+    max-width: 1440px;
+    margin: 20px;
 }
-
-.fa-solid {
-    color: var(--main-color);
-}
-
 /* Code de l'entête */
 header{
     display: flex;
@@ -23,9 +17,6 @@ header{
     margin: 0px 0px 30px 0px;
 }
 
-.seach{
-    display: none;
-}
 nav a:hover {
     color: #0065fc;
     border-bottom: solid #0065fc 4px;
@@ -33,6 +24,7 @@ nav a:hover {
 }
 a{
     text-decoration: none;
+    color: black;
 }
 
 .nav-list {
@@ -74,32 +66,62 @@ ul{
     z-index: 1;
 }
 
+/*style form insription*/
 
-/* footer */
-
-.section-footer {
-    display: flex;
-    background: black;
-    color: white;
-    margin-top: 75px;
-    box-sizing: border-box;
-    max-width: 1440px;
+.inscription-backroung{
+    background-color: #DEEBFF;
 }
+h2 {
+    width: 100px;
+   height: 36px;
+   font-size: 30px;
+   font-weight: 700;
+   line-height: 36px;
+   text-align: center;
+   margin: auto;
+   padding-bottom: 30px;
+   color: black;
 
-.footer-list {
-    width: 33%;
-    padding: 28px;
 }
-
-.footer-list h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
+section{
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
 }
+form{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 40vw;
+}
+label{
 
-.info-list {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 0;
+   font-family: Work Sans;
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 16.42px;
+   text-align: left;
+
+   color: black; 
+}
+input{
+    width: 379px;
+   height: 45px;
+   border: none;
+
+}
+.button {
+    width: 179px;
+  height: 36px;
+  border: none;
+  border-radius: 60px;
+  color: #FFFFFF;
+  background-color: black;
+}
+.button-login{
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding-top: 10px;
 }
