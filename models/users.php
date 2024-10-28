@@ -49,10 +49,31 @@ class UserPost{
             }
         }
     }
-    public function EditProfil($id, $password, $prenom, $age, $pseudo)
+    public function EditUser($id, $prenom, $pseudo, $age, $password)
     {
-        $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET name = ?, age = ?, pseudo = ?, password = ? WHERE id = ?");
-        $query->execute([$id, $password, $prenom, $age, $pseudo]);
+        if(isset($_POST['prenom']))
+        {
+            $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET prenom = ? WHERE id = ?");
+            $query->execute([$id, $prenom]);
+        }
+        if(isset($_POST['age']))
+        {
+            $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET age = ? WHERE id = ?");
+            $query->execute([$id, $age]);
+        }
+        if(isset($_POST['password']))
+        {
+            $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET password = ? WHERE id = ?");
+            $query->execute([$id, $password]);
+        }
+        if(isset($_POST['pseudo']))
+        {
+            if()
+            {
+                $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET pseudo = ? WHERE id = ?");
+                $query->execute([$id, $pseudo]);
+            }
+        }
     }
 }
 

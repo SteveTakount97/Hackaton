@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/asset/style.css">
-    <title>Mon Centre Animalier</title>
+    <title>profil</title>
 </head>
 <body>
     <header>
@@ -19,27 +19,27 @@
     </header>
     <main>
         <section>
-              <h2>Profil</h2>
-               <div>
-                  <label>Pseudo:</label><br>
-                  <input type="text" id="Pseudo" name="Pseudo" title="pseudo">
-               </div>
-               <div>
-                <label>Age:</label><br>
-                <input type="number" id="age" name="Age">
-             </div>
-             <div>
-                <label>Prenom:</label><br>
-                <input type="text" id="prenom" name="prenom">
-             </div>
-               <div>
-                  <label>Mot de passe:</label><br>
-                  <input type="password" id="password" name="password">
-               </div>
-               <div class="button-modif">
-                  <button type="submit" class="button">modifier</button>
-           </form>
-       </section>
+            <h2>Profil</h2>
+            <form method="POST">
+                <div>
+                    <label>Pseudo:</label><br>
+                    <input type="text" id="Pseudo" name="Pseudo" placeholder="pseudo">
+                </div>
+                <div>
+                    <label>Age:</label><br>
+                    <input type="number" id="age" name="Age" placeholder="18">
+                </div>
+                <div>
+                    <label>Prenom:</label><br>
+                    <input type="text" id="prenom" name="prenom" placeholder="prenom">
+                </div>
+                <div>
+                    <label>Mot de passe:</label><br>
+                    <input type="password" id="password" name="password" placeholder="password">
+                </div>
+                <button type="submit" class="button">modifier</button>
+            </form>
+        </section>
         
     </main>
     
