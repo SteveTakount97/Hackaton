@@ -1,13 +1,8 @@
-<?php
-
-// on définit un espace de noms (namespace)
-namespace Application\models\users;
+<?php 
 
 // je lie ma page avec la database
-require_once("bdd/database.php");
-
-// use = importer et de simplifier l'utilisation de getDatabase dans le code
-use Application\bdd\database\getDataBase;
+require_once("bdd/Database.php");
+require_once("controllers/connect.php");
 
 // je crée ma class user qui définira
 class User{
@@ -16,8 +11,13 @@ class User{
     public string $password;
 }
 class UserPost{
+    public $connection;
+    public function __construct(){
+        $this -> connection = new Database();
+    }
+
     public function userDetails($id){
-        $query = $this -> connection -> getDataBase() -> prepare(
+        $query = $this -> connection -> getConnection() -> prepare(
             "SELECT $ FROM users WHERE id =?"
         );
         $query -> execute([$id]);
@@ -26,7 +26,7 @@ class UserPost{
     }
 
     public function UserConnect($user, $password){
-        $query = $this -> connection -> getDataBase() -> prepare(
+        $query = $this -> connection -> getConnection() -> prepare(
             "SELECT * FROM users WHERE pseudo =?"
         );
         $query -> execute([$user]);
@@ -51,7 +51,7 @@ class UserPost{
     }
     public function EditProfil($id, $password, $prenom, $age, $pseudo)
     {
-        $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET name = ?, age = ?, pseudo = ?, password = ? WHERE id = ?");
+        $query = $this->connection->getConnection() ->prepare("UPDATE user SET name = ?, age = ?, pseudo = ?, password = ? WHERE id = ?");
         $query->execute([$id, $password, $prenom, $age, $pseudo]);
     }
 }
