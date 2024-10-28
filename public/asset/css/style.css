@@ -3,15 +3,6 @@
     font-family: 'Raleway', sans-serif;
 }
 
-:root {
-    --main-color: #0065FC;
-    --main-bg-color: #F2F2F2;
-    --filter-bg-color: #DEEBFF;
-}
-
-.fa-solid {
-    color: var(--main-color);
-}
 body{
     max-width: 1440px;
     margin: 20px;
@@ -76,36 +67,6 @@ ul{
     font-size: 2.5rem; 
     text-align: center;
     z-index: 1;
-}
-
-
-/* footer */
-
-.section-footer {
-    display: flex;
-    background: black;
-    color: white;
-    margin-top: 75px;
-    box-sizing: border-box;
-    max-width: 1440px;
-}
-
-.footer-list {
-    width: 33%;
-    padding: 28px;
-}
-
-.footer-list h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.info-list {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 0;
 }
 
 /*style form insription*/
