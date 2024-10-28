@@ -15,7 +15,20 @@ class User{
     public string $user;
     public string $password;
 }
+class modifProfil{
 
+    private $db;
+
+    public function __construct(database $db)
+    {
+        $this->db = $db->getConnection();
+    }
+    public function editProfil($id, $password, $prenom, $age, $pseudo)
+    {
+        $query = $this->db->prepare("UPDATE user SET name = ?, age = ?, pseudo = ?, password = ? WHERE id = ?");
+        $query->execute([$id, $password, $prenom, $age, $pseudo]);
+    }
+}
 class UserPost{
     public function userDetails($id){
         $query = $this -> connection -> getDataBase() -> prepare(
