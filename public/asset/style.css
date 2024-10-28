@@ -44,10 +44,10 @@ a{
 }
 ul{
     display: flex;
-    list-style-type: none; /* Supprime les puces */
+    list-style-type: none; 
 }
 .nav-list li {
-    margin-left: 20px; /* Espacement entre les liens */
+    margin-left: 20px;
 }
 .fond-image{
     width: 100%;
@@ -62,14 +62,14 @@ ul{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url('../asset/dog-cat.jpg');
+    transition: background-image 0.5s ease;
     background-size: cover;
     background-position: center;
 }
 
 .main-background h1 {
-    color: black; /* Changez la couleur selon le contraste souhaité */
-    font-size: 2.5rem; /* Ajustez la taille du texte selon vos préférences */
+    color: white; 
+    font-size: 2.5rem; 
     text-align: center;
     z-index: 1;
 }
