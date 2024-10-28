@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/asset/css/style.css">
+    <title>Mon Centre Animalier</title>
+</head>
+<body class="inscription-background">
+    <header>
+    <a class="logo-container">
+      <img src="../public/asset/logo.jpeg" class="logo" alt="logo_centre">
+         </a>
+             <nav>
+                 <ul class="nav-list">
+                     <li><a href="acceuil.html">Acceuil</a></li>
+                     <li><a href="" >Connexion</a></li>
+                 </ul>
+             </nav> 
+    </header>
+    <main>
+        <section>
+            <form action="inscription.php" method="post" class="login-form" id="loginform">
+              <h2>Inscription</h2>
+               <div>
+                  <label for="email">Prenom:</label><br>
+                  <input type="text" id="Prenom" name="Prenom" placeholder="saisir votre Prenom"  required>
+               </div>
+               <div>
+                <label for="password">Age:</label><br>
+                <input type="number" id="number" name="Age" placeholder="saisir votre âge" required>
+             </div>
+             <div>
+                <label for="password">Pseudo:</label><br>
+                <input type="email" id="email" name="email" placeholder="saisir votre email" required>
+             </div>
+               <div>
+                  <label for="password">Mot de passe:</label><br>
+                  <input type="password" id="password" name="password" placeholder="saisir votre mot de passe" required>
+               </div>
+               <div class="button-login">
+                  <button type="submit" name="submit" class="button">S'inscrire</button>
+               </div>
+           </form>
+       </section>
+        
+    </main>
+    
+</body>
+
+</html>
