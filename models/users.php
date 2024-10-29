@@ -79,4 +79,9 @@ class User{
                 $query ="Le nouveau pseudo est deja pris";
             }
         }
+<<<<<<< HEAD
     }
+}
+=======
+    }
+>>>>>>> 534526f1233679f3e20178345852f36b6a56fb1e
