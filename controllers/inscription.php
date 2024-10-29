@@ -16,12 +16,12 @@ class Inscription {
 
             // Recup et Stockage des valeurs 
             $password = htmlspecialchars($_POST['password']);
-            $speudo = ($_POST['pseudo']);
+            $pseudo = ($_POST['pseudo']);
             $age = $_POST['age'];
             $prenom = $_POST['prenom'];
 
             // Tentative d'inscription
-            if ($this->user->register($prenom, $email, $password, $age)) {
+            if ($this->user->register($prenom, $pseudo, $password, $age)) {
                 // Redirection à la page d'accueil
                 header('Location: ../views/acceuil.html');
                 exit; // Ne pas oublier d'appeler exit() après la redirection
