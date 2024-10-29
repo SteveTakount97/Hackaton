@@ -10,15 +10,16 @@ class profil {
         if(empty($_POST['prenom']) || empty($_POST['pseudo']) || empty($_POST['password'] || empty($_POST['age']))){
             header('location: ../views/profil.html');
         }
-        $password = htmlspecialchars($_POST['password']);
-        $pseudo = filter_var($_POST['pseudo']);
-        $age = $_POST['age'];
-        $prenom = $_POST['prenom'];
 
-        if ($this->user->EditUser($prenom, $pseudo, $password, $age)) {
+        $password = htmlspecialchars($_POST['password']);
+        $pseudo = htmlspecialchars($_POST['pseudo']);
+        $age = (int)$_POST['age'];
+        $prenom = $_POST['prenom'];
+        $id = $_SESSION['id'];
+
+        if ($this->user->EditUser($prenom, $pseudo, $password, $age, $id)) {
             header('location: ../views/profil.html');
-        } else {
-            return ".";
+            exit;
         }
     }
 

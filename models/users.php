@@ -101,7 +101,7 @@ class UserPost{
             }
             else
             {
-                $query ="Le nouveau pseudo est deja pris";
+                throw new \Exception(("Le nouveau pseudo est deja pris"));
             }
         }
     }
