@@ -68,7 +68,7 @@ class User{
         }
         if(isset($_POST['pseudo']))
         {
-            $query = $this->connection->getConnection()->prepare("SELECT COUNT(*) FROM membres WHERE pseudo = '".$_POST['pseudo']."'");
+            $query = $this->connection->getConnection()->prepare("SELECT COUNT(*) FROM membres WHERE pseudo = ?");
             if($query != 0)
             {
                 $query = $this->connection->getConnection()->prepare("UPDATE user SET pseudo = ? WHERE id = ?");
