@@ -4,6 +4,7 @@ require_once('./bdd/database.php');
 require_once('./models/users.php');
 
 class Inscription {
+    
     private $user;
 
     public function execute() {
