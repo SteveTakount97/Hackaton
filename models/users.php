@@ -19,7 +19,7 @@ class User{
         $query = $this->connection->getConnection()->prepare(
             "SELECT * FROM users WHERE id =?"
         );
-        $query -> execute([$id]);
+        $query -> connection([$id]);
         $resultat = $query->fetch();
         return $resultat;
     }
@@ -28,7 +28,7 @@ class User{
         $query = $this->connection->getConnection()->prepare(
             "SELECT * FROM users WHERE pseudo =?"
         );
-        $query -> execute([$user]);
+        $query -> connection([$user]);
         $resultat = $query->fetch();
 
         if($query -> rowCount() == 0){
