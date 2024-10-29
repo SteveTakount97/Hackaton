@@ -45,7 +45,7 @@ class UserPost{
         $query = $this->connection->getConnection()->prepare(
             "SELECT * FROM users WHERE id =?"
         );
-        $query->connection([$id]);
+        $query->execute([$id]);
         $resultat = $query->fetch();
         return $resultat;
     }
@@ -54,7 +54,7 @@ class UserPost{
         $query = $this->connection->getConnection()->prepare(
             "SELECT * FROM users WHERE pseudo =?"
         );
-        $query->connection([$user]);
+        $query->execute([$user]);
         $resultat = $query->fetch();
 
         if($query -> rowCount() == 0){
