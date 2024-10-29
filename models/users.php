@@ -19,7 +19,7 @@ class User{
         $query = $this->connection->getConnection()->prepare(
             "SELECT * FROM users WHERE id =?"
         );
-        $query -> execute([$id]);
+        $query -> connection([$id]);
         $resultat = $query->fetch();
         return $resultat;
     }
@@ -28,7 +28,7 @@ class User{
         $query = $this->connection->getConnection()->prepare(
             "SELECT * FROM users WHERE pseudo =?"
         );
-        $query -> execute([$user]);
+        $query -> connection([$user]);
         $resultat = $query->fetch();
 
         if($query -> rowCount() == 0){
@@ -68,7 +68,7 @@ class User{
         }
         if(isset($_POST['pseudo']))
         {
-            $query = $this->connection->getConnection()->prepare("SELECT COUNT(*) FROM membres WHERE pseudo = '".$_POST['pseudo']."'");
+            $query = $this->connection->getConnection()->prepare("SELECT COUNT(*) FROM membres WHERE pseudo = ?");
             if($query != 0)
             {
                 $query = $this->connection->getConnection()->prepare("UPDATE user SET pseudo = ? WHERE id = ?");
