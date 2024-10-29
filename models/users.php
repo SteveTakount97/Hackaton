@@ -14,24 +14,23 @@ class User{
     
     public $connection;
     // Méthode pour enregistrer un nouvel utilisateur
-     public function register() {
+     public function register($prenom, $age, $speudo, $password) {
 
-        $query = "INSERT INTO " . $this->pseudo . " (pseudo, password, age, prenom) VALUES (:pseudo, :password, :age,:prenom)";
+        $query = $this->connection->getConnection()->prepare(
+            "INSER INTO * FROM users (prenom, email, password, age) VALUES (?, ?, ?, ?)"
+        );
+        $query->execute([$prenom, $speudo, $password, $age]);
+        $resultat = $query->fetch();
+        return $resultat;
+    }
 
-        $stmt = $this->connection->prepare($query);
-
-       // Liaison des paramètres avec les propriétés de l'objet
-       $stmt->bindParam(":prenom", $this->prenom);
-       $stmt->bindParam(":age", $this->age);
-       $stmt->bindParam(":pseudo", $this->pseudo);
-       $stmt->bindParam(":password", $this->password);
        
        //creation d'un nouvel user
        $user = new user();
        $user-> connection = new Database();
        
        // Exécuter la requête et retourner le résultat
-       return $stmt->execute();
+       return $query->execute();
    }
 }
 class UserPost{
