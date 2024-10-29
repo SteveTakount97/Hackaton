@@ -12,7 +12,7 @@ class Connect{
         // et je précise que si le champ "user" est vide : un message précisant à l'utilisateur de remplir ce champ
         if(empty(htmlspecialchars($_POST['user']))){
             // affichage du message d'erreur dans le cas ou le champ reste vide 
-            throw new \Exception("Veuillez saisir votre email");
+            throw new \Exception("Veuillez entrer un nom d'utilisateur valide");
         }
         else{
             // dans le cas ou le champ n'est pas vide alors nous prenons l'user
@@ -29,7 +29,7 @@ class Connect{
         }
 
         header('Location: ../views/acceuil.html');
-        
+
     }
     // utilisé pour charger des vues ou des composants
     public function page(){
