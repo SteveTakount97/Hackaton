@@ -9,6 +9,30 @@ class User{
     public string $id;
     public string $user;
     public string $password;
+    public string $age;
+    public string $prenom;
+
+    // Méthode pour enregistrer un nouvel utilisateur
+     public function register() {
+        $query = "INSERT INTO " . $this->table_name . " (email, password, age, prenom) VALUES (:email, :password, :age,:prenom)";
+        $stmt = $this->conn->prepare($query);
+
+       // Liaison des paramètres avec les propriétés de l'objet
+       $stmt->bindParam(":prenom", $this->prenom);
+       $stmt->bindParam(":age", $this->age);
+       $stmt->bindParam(":email", $this->email);
+       $stmt->bindParam(":password", $this->password);
+       
+       //creation d'un nouvel user
+       $user = new user();
+       $user->connection = new Database();
+       
+       // Exécuter la requête et retourner le résultat
+       return $stmt->execute();
+   }
+}
+class UserPost{
+=======
 
     public $connection;
     public function __construct(){
