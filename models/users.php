@@ -7,7 +7,7 @@ require_once("controllers/connect.php");
 // je crée ma class user qui définira
 class User{
     public string $id;
-    public string $user;
+    public string $pseudo;
     public string $password;
     public string $age;
     public string $prenom;
@@ -16,7 +16,7 @@ class User{
     // Méthode pour enregistrer un nouvel utilisateur
      public function register() {
         $query = "INSERT INTO " . $this->user . " (pseudo, password, age, prenom) VALUES (:pseudo, :password, :age,:prenom)";
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->connection->prepare($query);
 
        // Liaison des paramètres avec les propriétés de l'objet
        $stmt->bindParam(":prenom", $this->prenom);
