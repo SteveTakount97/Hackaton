@@ -14,12 +14,12 @@ class User{
     
     public $connection;
     // Méthode pour enregistrer un nouvel utilisateur
-     public function register($prenom, $age, $speudo, $password) {
+     public function register($prenom, $age, $pseudo, $password) {
 
         $query = $this->connection->getConnection()->prepare(
-            "INSER INTO * FROM users (prenom, email, password, age) VALUES (?, ?, ?, ?)"
+            "INSER INTO * FROM users (prenom, pseudo, password, age) VALUES (?, ?, ?, ?)"
         );
-        $query->execute([$prenom, $speudo, $password, $age]);
+        $query->execute([$prenom, $pseudo, $password, $age]);
         $resultat = $query->fetch();
         return $resultat;
     }
