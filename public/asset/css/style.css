@@ -27,6 +27,10 @@ a{
     color: black;
 }
 
+.deconnect{
+    display: none;
+}
+
 .nav-list {
     display: flex;
     flex-wrap: wrap;

@@ -1,13 +1,8 @@
-<?php
-
-// on définit un espace de noms (namespace)
-namespace Application\models\users;
+<?php 
 
 // je lie ma page avec la database
-require_once("bdd/database.php");
-
-// use = importer et de simplifier l'utilisation de getDatabase dans le code
-use Application\bdd\database\getDataBase;
+require_once("bdd/Database.php");
+require_once("controllers/connect.php");
 
 // je crée ma class user qui définira
 class User{
@@ -37,21 +32,28 @@ class User{
    }
 }
 class UserPost{
+=======
+
+    public $connection;
+    public function __construct(){
+        $this->connection = new Database();
+    }
+
     public function userDetails($id){
-        $query = $this -> connection -> getDataBase() -> prepare(
-            "SELECT $ FROM users WHERE id =?"
+        $query = $this->connection->getConnection()->prepare(
+            "SELECT * FROM users WHERE id =?"
         );
-        $query -> execute([$id]);
-        $resultat = $query -> fetch();
+        $query -> connection([$id]);
+        $resultat = $query->fetch();
         return $resultat;
     }
 
     public function UserConnect($user, $password){
-        $query = $this -> connection -> getDataBase() -> prepare(
+        $query = $this->connection->getConnection()->prepare(
             "SELECT * FROM users WHERE pseudo =?"
         );
-        $query -> execute([$user]);
-        $resultat = $query -> fetch();
+        $query -> connection([$user]);
+        $resultat = $query->fetch();
 
         if($query -> rowCount() == 0){
             throw new \Exception("L'utilisateur n'existe pas, veuillez vérifier vos données ou créer un compte");
@@ -70,10 +72,36 @@ class UserPost{
             }
         }
     }
-    public function EditProfil($id, $password, $prenom, $age, $pseudo)
+
+    public function EditUser($id, $prenom, $pseudo, $age, $password)
     {
-        $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET name = ?, age = ?, pseudo = ?, password = ? WHERE id = ?");
-        $query->execute([$id, $password, $prenom, $age, $pseudo]);
+        if(isset($_POST['prenom']))
+        {
+            $query = $this->connection->getConnection()->prepare("UPDATE user SET prenom = ? WHERE id = ?");
+            $query->execute([$id, $prenom]);
+        }
+        if(isset($_POST['age']))
+        {
+            $query = $this->connection->getConnection()->prepare("UPDATE user SET age = ? WHERE id = ?");
+            $query->execute([$id, $age]);
+        }
+        if(isset($_POST['password']))
+        {
+            $query = $this->connection->getConnection()->prepare("UPDATE user SET password = ? WHERE id = ?");
+            $query->execute([$id, $password]);
+        }
+        if(isset($_POST['pseudo']))
+        {
+            $query = $this->connection->getConnection()->prepare("SELECT COUNT(*) FROM membres WHERE pseudo = ?");
+            if($query != 0)
+            {
+                $query = $this->connection->getConnection()->prepare("UPDATE user SET pseudo = ? WHERE id = ?");
+                $query->execute([$id, $pseudo]);
+            }
+            else
+            {
+                $query ="Le nouveau pseudo est deja pris";
+            }
+        }
     }
 }
-

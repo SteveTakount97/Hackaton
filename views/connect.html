@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/asset/style.css">
-    <title>profil</title>
+    <title>Connexion</title>
 </head>
 <body>
     <header>
@@ -13,31 +13,23 @@
          </a>
              <nav>
                  <ul class="nav-list">
-                     <li><a href="acceuil.html" class="lien">Acceuil</a></li>
+                     <li><a href="accueil.html" class="lien">Acceuil</a></li>
                  </ul>
              </nav> 
     </header>
     <main>
         <section>
-            <h2>Profil</h2>
-            <form action="../controllers/profil.php" method="POST">
+            <h2>Connexion</h2>
+            <form action="../controllers/connect.php" method="post">
                 <div>
                     <label>Pseudo:</label><br>
                     <input type="text" id="Pseudo" name="Pseudo" placeholder="pseudo">
                 </div>
                 <div>
-                    <label>Age:</label><br>
-                    <input type="number" id="age" name="Age" placeholder="18">
-                </div>
-                <div>
-                    <label>Prenom:</label><br>
-                    <input type="text" id="prenom" name="prenom" placeholder="prenom">
-                </div>
-                <div>
                     <label>Mot de passe:</label><br>
                     <input type="password" id="password" name="password" placeholder="password">
                 </div>
-                <button type="submit" class="button">modifier</button>
+                <button type="submit" class="button">se connecter</button>
             </form>
         </section>
         
