@@ -7,13 +7,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE `user` (
-  `prenom` varchar(255) DEFAULT NULL,
-  `age` int DEFAULT NULL,
-  `pseudo` varchar(255) DEFAULT NULL,
-  `password` varchar(8) DEFAULT NULL,
+CREATE TABLE `post` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `Id_message` int DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
