@@ -7,7 +7,7 @@ require_once("./models/users.php");
 // en namespace nous utilisons les "class" pour utiliser notre structure d'objet plus facilement dans les autres fichiers(pages)/dossiers
 class Connect{
     // je crée une fonction en public 
-    public function execute(){
+    public function connection(){
         // dans le cas ou le champ user est vide -> je met les caractères spéciaux en html 
         // et je précise que si le champ "user" est vide : un message précisant à l'utilisateur de remplir ce champ
         if(empty(htmlspecialchars($_POST['user']))){
@@ -28,11 +28,17 @@ class Connect{
             $password = htmlspecialchars($_POST['password']);
         }
 
-        // inclusion du fichier connect.php qui est dans le dossier views
-        require('./views/connect.php');
+        header('Location: ../views/acceuil.html');
+        
     }
     // utilisé pour charger des vues ou des composants
     public function page(){
         require_once('./views/connect.php');
     }
+}
+
+$connect = new Connect();
+
+if($_GET["action"] && $_GET["action"] === "connect"){
+    $connect->connection(); 
 }
