@@ -15,7 +15,9 @@ class User{
     public $connection;
     // Méthode pour enregistrer un nouvel utilisateur
      public function register() {
-        $query = "INSERT INTO " . $this->user . " (pseudo, password, age, prenom) VALUES (:pseudo, :password, :age,:prenom)";
+
+        $query = "INSERT INTO " . $this->pseudo . " (pseudo, password, age, prenom) VALUES (:pseudo, :password, :age,:prenom)";
+
         $stmt = $this->connection->prepare($query);
 
        // Liaison des paramètres avec les propriétés de l'objet
@@ -43,7 +45,7 @@ class UserPost{
         $query = $this->connection->getConnection()->prepare(
             "SELECT * FROM users WHERE id =?"
         );
-        $query -> connection([$id]);
+        $query->connection([$id]);
         $resultat = $query->fetch();
         return $resultat;
     }
@@ -52,7 +54,7 @@ class UserPost{
         $query = $this->connection->getConnection()->prepare(
             "SELECT * FROM users WHERE pseudo =?"
         );
-        $query -> connection([$user]);
+        $query->connection([$user]);
         $resultat = $query->fetch();
 
         if($query -> rowCount() == 0){
