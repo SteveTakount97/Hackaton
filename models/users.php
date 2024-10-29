@@ -15,7 +15,9 @@ class User{
     public $connection;
     // Méthode pour enregistrer un nouvel utilisateur
      public function register() {
+
         $query = "INSERT INTO " . $this->pseudo . " (pseudo, password, age, prenom) VALUES (:pseudo, :password, :age,:prenom)";
+
         $stmt = $this->connection->prepare($query);
 
        // Liaison des paramètres avec les propriétés de l'objet
