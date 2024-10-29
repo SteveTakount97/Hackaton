@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/asset/style.css">
+    <link rel="stylesheet" href="../public/asset/css/style.css">
     <title>profil</title>
 </head>
 <body>
@@ -13,14 +13,14 @@
          </a>
              <nav>
                  <ul class="nav-list">
-                     <li><a href="acceuil.html" class="lien">Acceuil</a></li>
+                     <li><a href="acceuil.html">Acceuil</a></li>
                  </ul>
              </nav> 
     </header>
     <main>
         <section>
-            <h2>Profil</h2>
             <form action="../controllers/profil.php" method="POST">
+                <h2>Profil</h2>
                 <div>
                     <label>Pseudo:</label><br>
                     <input type="text" id="Pseudo" name="Pseudo" placeholder="pseudo">
@@ -37,7 +37,9 @@
                     <label>Mot de passe:</label><br>
                     <input type="password" id="password" name="password" placeholder="password">
                 </div>
-                <button type="submit" class="button">modifier</button>
+                <div class="button-login">
+                    <button type="submit" class="button">modifier</button>
+                </div>
             </form>
         </section>
         
