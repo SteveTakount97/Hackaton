@@ -7,23 +7,28 @@ class Inscription {
     private $user;
 
     public function execute() {
-        // Validation des données du formulaire
-        if(empty($_POST['prenom']) || empty($_POST['pseudo']) || empty($_POST['password'] || empty($_POST['age']))){
-            throw new \Exception('Veuillez remplir tous les champs');
-        }
-        //stockage des valeurs 
-        $password = htmlspecialchars($_POST['password']);
-        $email = filter_var($_POST['pseudo'], FILTER_SANITIZE_EMAIL);
-        $age = $_POST['age'];
-        $prenom = $_POST['prenom'];
+        // Vérification si le formulaire a été soumis
+        if (isset($_POST['submit'])) {
+            // Validation des données du formulaire
+            if (empty($_POST['prenom']) || empty($_POST['pseudo']) || empty($_POST['password']) || empty($_POST['age'])) {
+                throw new \Exception('Veuillez remplir tous les champs');
+            }
 
-        // Tentative d'inscription
-        if ($this->user->register($prenom, $email, $password, $age)) {
-            return "Inscription réussie !";
-        } else {
-            return "Erreur lors de l'inscription.";
+            // Recup et Stockage des valeurs 
+            $password = htmlspecialchars($_POST['password']);
+            $speudo = ($_POST['pseudo']);
+            $age = $_POST['age'];
+            $prenom = $_POST['prenom'];
+
+            // Tentative d'inscription
+            if ($this->user->register($prenom, $email, $password, $age)) {
+                // Redirection à la page d'accueil
+                header('Location: ../views/acceuil.html');
+                exit; // Ne pas oublier d'appeler exit() après la redirection
+            } else {
+                return "Erreur lors de l'inscription.";
+            }
         }
     }
-
 }
 ?>
