@@ -26,13 +26,13 @@ class User{
 
        
        //creation d'un nouvel user
-       $user = new user();
-       $user-> connection = new Database();
+    //    $user = new User();
+    //    $user-> connection = new Database();
        
-       // Exécuter la requête et retourner le résultat
-       return $query->execute();
-   }
+    //    // Exécuter la requête et retourner le résultat
+    //    return $query->execute();
 }
+
 class UserPost{
 
     public $connection;
