@@ -27,7 +27,11 @@ class User{
        $stmt->bindParam(":age", $this->age);
        $stmt->bindParam(":email", $this->email);
        $stmt->bindParam(":password", $this->password);
-
+       
+       //creation d'un nouvel user
+       $user = new user();
+       $user->connection = new Database();
+       
        // Exécuter la requête et retourner le résultat
        return $stmt->execute();
    }
