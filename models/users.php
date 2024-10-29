@@ -32,7 +32,6 @@ class User{
    }
 }
 class UserPost{
-=======
 
     public $connection;
     public function __construct(){
