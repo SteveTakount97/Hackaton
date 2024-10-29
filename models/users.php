@@ -53,25 +53,25 @@ class UserPost{
     {
         if(isset($_POST['prenom']))
         {
-            $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET prenom = ? WHERE id = ?");
+            $query = $this->connection->getConnection() ->prepare("UPDATE user SET prenom = ? WHERE id = ?");
             $query->execute([$id, $prenom]);
         }
         if(isset($_POST['age']))
         {
-            $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET age = ? WHERE id = ?");
+            $query = $this->connection->getConnection() ->prepare("UPDATE user SET age = ? WHERE id = ?");
             $query->execute([$id, $age]);
         }
         if(isset($_POST['password']))
         {
-            $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET password = ? WHERE id = ?");
+            $query = $this->connection->getConnection() ->prepare("UPDATE user SET password = ? WHERE id = ?");
             $query->execute([$id, $password]);
         }
         if(isset($_POST['pseudo']))
         {
-            $query = $this->connexion->getDataBase() ->prepare("SELECT COUNT(*) FROM membres WHERE pseudo = '".$_POST['pseudo']."'");
+            $query = $this->connection->getConnection() ->prepare("SELECT COUNT(*) FROM membres WHERE pseudo = '".$_POST['pseudo']."'");
             if($query != 0)
             {
-                $query = $this->connexion->getDataBase() ->prepare("UPDATE user SET pseudo = ? WHERE id = ?");
+                $query = $this->connection->getConnection() ->prepare("UPDATE user SET pseudo = ? WHERE id = ?");
                 $query->execute([$id, $pseudo]);
             }
             else
@@ -83,4 +83,3 @@ class UserPost{
         $query->execute([$id, $password, $prenom, $age, $pseudo]);
     }
 }
-
