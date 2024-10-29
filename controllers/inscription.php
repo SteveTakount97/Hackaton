@@ -1,35 +1,29 @@
 <?php
-// cette ligne structure le code et aide à maintenir une organisation claire dans les dossiers et fichiers
-namespace Application\Controllers\connect;
 
-// j'inclus les fichiers database et le model users afin de lier mes pages
-require_once("./bdd/database.php");
-require_once("./models/users.php");
+require_once('./bdd/database.php');
+require_once('./models/users.php');
 
 class Inscription {
-    private $db;
+    private $user;
 
-    // Constructeur qui initialise la connexion à la base de données
-    public function __construct($db) {
-        $this->db = $db;
-    }
+    public function execute() {
+        // Validation des données du formulaire
+        if (empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['password'] || empty($_POST['age'])) {
+            throw new \Exception('Veuillez remplir tous les champs');
+        }
+        //stockage des valeurs 
+        $password = htmlspecialchars($_POST['password']);
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $age = $_POST['age'];
+        $prenom = $_POST['prenom'];
 
-    // Méthode pour enregistrer un utilisateur
-    public function register($email, $password) {
-        // Créer une nouvelle instance de la classe User
-        $user = new User($this->db);
-        
-        // Assigner les valeurs reçues aux propriétés de l'utilisateur
-        $user->email = $email;
-        $user->password = $password;
-
-        // Tenter de s'inscrire
-        if ($user->register()) {
+        // Tentative d'inscription
+        if ($this->user->register($prenom, $email, $password, $age)) {
             return "Inscription réussie !";
         } else {
             return "Erreur lors de l'inscription.";
         }
     }
-}
 
+}
 ?>
