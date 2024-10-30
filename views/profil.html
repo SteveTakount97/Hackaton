@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/asset/css/style.css">
+    <title>profil</title>
+</head>
+<body>
+    <header>
+    <a class="logo-container">
+      <img src="../public/asset/logo.jpeg" class="logo" alt="logo_centre">
+         </a>
+             <nav>
+                 <ul class="nav-list">
+                     <li><a href="acceuil.html">Acceuil</a></li>
+                 </ul>
+             </nav> 
+    </header>
+    <main>
+        <section>
+            <form action="../controllers/profil.php?action=profil" method="POST">
+                <h2>Profil</h2>
+                <div>
+                    <label>Pseudo:</label><br>
+                    <input type="text" id="Pseudo" name="Pseudo" placeholder="pseudo">
+                </div>
+                <div>
+                    <label>Age:</label><br>
+                    <input type="number" id="age" name="Age" placeholder="18">
+                </div>
+                <div>
+                    <label>Prenom:</label><br>
+                    <input type="text" id="prenom" name="prenom" placeholder="prenom">
+                </div>
+                <div>
+                    <label>Mot de passe:</label><br>
+                    <input type="password" id="password" name="password" placeholder="password">
+                </div>
+                <div class="button-login">
+                    <input type="submit" class="button">modifier>
+                </div>
+            </form>
+        </section>
+        
+    </main>
+    
+    
+</body>
+
+</html>

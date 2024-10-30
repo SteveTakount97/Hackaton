@@ -1,0 +1,131 @@
+/* General */
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    max-width: 1440px;
+    margin: 20px;
+}
+/* Code de l'entête */
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    height: 60px;
+    margin: 0px 0px 30px 0px;
+}
+
+nav a:hover {
+    color: #0065fc;
+    border-bottom: solid #0065fc 4px;
+    padding: 21px 0px 0px 0px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.deconnect{
+    display: none;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 68px;
+    margin: 15px 1px;
+}
+ul{
+    display: flex;
+    list-style-type: none; 
+}
+.nav-list li {
+    margin-left: 20px;
+}
+.fond-image{
+    width: 100%;
+    max-width: 1200px;
+    object-fit: contain;
+}
+/* main*/
+
+.main-background {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background-image 0.5s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-background h1 {
+    color: white; 
+    font-size: 2.5rem; 
+    text-align: center;
+    z-index: 1;
+}
+
+/*style form insription*/
+
+.inscription-backroung{
+    background-color: #DEEBFF;
+}
+h2 {
+    width: 100px;
+   height: 36px;
+   font-size: 30px;
+   font-weight: 700;
+   line-height: 36px;
+   text-align: center;
+   margin: auto;
+   padding-bottom: 30px;
+   color: black;
+
+}
+section{
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+}
+form{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 40vw;
+}
+label{
+
+   font-family: Work Sans;
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 16.42px;
+   text-align: left;
+
+   color: black; 
+}
+input{
+    width: 379px;
+   height: 45px;
+   border: none;
+
+}
+.button {
+    width: 179px;
+  height: 36px;
+  border: none;
+  border-radius: 60px;
+  color: #FFFFFF;
+  background-color: black;
+}
+.button-login{
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding-top: 10px;
+}
