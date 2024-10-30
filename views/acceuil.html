@@ -7,16 +7,22 @@
     <title>Mon Centre Animalier</title>
 </head>
 <body>
+    <?php
+     session_start();
+    ?>
     <header>
     <a class="logo-container">
       <img src="../public/asset/logo.jpeg" class="logo" alt="logo_centre">
          </a>
-             <nav>
+             <nav class="<?php echo isset($_SESSION['logged_in']) ? 'connected' : 'not-connected'; ?>">
                  <ul class="nav-list">
+                    <?php if (isset($_SESSION['logged_in']) ): ?>
+                      <li class="deconnect"><a href="deconnect.html">Déconnexion</a></li>
+                     <li class="deconnect"><a href="profil.html">Profil</a></li>
+                     <?php else: ?>
                      <li><a href="inscription.html">Inscription</a></li>
-                     <li class="deconnect"><a href="deconnect.html">Déconnexion</a></li>
                      <li><a href="connect.html">Connexion</a></li>
-
+                     <?php endif; ?>
                  </ul>
              </nav> 
     </header>
