@@ -14,7 +14,7 @@ class Inscription {
     public function execute() {
         // Vérification si le formulaire a été soumis
             // Validation des données du formulaire
-            if (empty($_POST['prenom']) || empty($_POST['pseudo']) || empty($_POST['password']) || empty($_POST['age'])) {
+            if (empty($_POST['prenom']) || empty($_POST['age']) || empty($_POST['pseudo']) || empty($_POST['password'])) {
                 throw new \Exception('Veuillez remplir tous les champs');
             }
 
@@ -25,7 +25,7 @@ class Inscription {
             $prenom = $_POST['prenom'];
 
             // Tentative d'inscription
-            if ($this->user->register($prenom, $pseudo, $password, $age)) {
+            if ($this->user->register($prenom, $age, $pseudo, $password)) {
                 // Redirection à la page d'accueil
                 header('Location: ../views/acceuil.html');
                 exit; // Ne pas oublier d'appeler exit() après la redirection
