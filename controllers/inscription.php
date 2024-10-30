@@ -7,7 +7,10 @@ require_once '../models/users.php';
 class Inscription {
     
     private $user;
-
+    
+    public function __construct(){
+        $this->user = new User();
+    }
     public function execute() {
         // Vérification si le formulaire a été soumis
             // Validation des données du formulaire
