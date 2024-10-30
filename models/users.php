@@ -1,9 +1,7 @@
 <?php 
 
 // je lie ma page avec la database
-require_once("bdd/Database.php");
-require_once("controllers/connect.php");
-require_once("controllers/profil.php");
+require_once "../bdd/Database.php";
 // je crée ma class user qui définira
 class User{
     public string $id;

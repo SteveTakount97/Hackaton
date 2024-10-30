@@ -22,7 +22,7 @@ class profil {
             $id = $_SESSION['id'];
     
             
-            header('location: ../views/profil.html');
+            header('Location: ../views/profil.html');
             }
     }
 
