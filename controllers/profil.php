@@ -34,4 +34,3 @@ if($_GET["action"] && $_GET["action"] === "profil"){
     $profil->edit(); 
 }
 
-?>
