@@ -37,7 +37,7 @@ class User{
 
     public function userDetails($id){
         $query = $this->connection->getConnection()->prepare(
-            "SELECT * FROM users WHERE id =?"
+            "SELECT * FROM user WHERE id =?"
         );
         $query->execute([$id]);
         $resultat = $query->fetch();
@@ -46,7 +46,7 @@ class User{
 
     public function userConnect($pseudo, $password){
         $query = $this->connection->getConnection()->prepare(
-            "SELECT * FROM users WHERE pseudo =?"
+            "SELECT * FROM user WHERE pseudo =?"
         );
         $query->execute([$pseudo]);
         $resultat = $query->fetch();
