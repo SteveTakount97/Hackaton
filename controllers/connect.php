@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // j'inclus les fichiers database et le model users afin de lier mes pages
 require_once("./bdd/Database.php");
 require_once("./models/users.php");
