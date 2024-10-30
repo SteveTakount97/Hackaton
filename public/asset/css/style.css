@@ -136,3 +136,23 @@ input{
 	gap: 20px;
 	padding-top: 10px;
 }
+/*style form publication*/
+.public{
+    display: flex;
+    flex-direction: column;
+}
+.sous-titre{
+    width: 300px;
+    margin: 0;
+    text-align: left;
+}
+textarea{
+    height: 250px;
+    margin-bottom: 20px;
+}
+.button-deconnexion{
+    width: 200px;
+}
+.post{
+    width: 220px;
+}
