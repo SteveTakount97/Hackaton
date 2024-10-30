@@ -30,6 +30,13 @@ a{
 .deconnect{
     display: none;
 }
+.connected {
+   display: none;
+}
+
+.not-connected {
+   display: block;
+}
 
 .nav-list {
     display: flex;
