@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once('./models/users.php');
+require_once './models/users.php';
 
 class profil {
     private $user;
@@ -25,4 +25,5 @@ class profil {
     }
 
 }
+
 ?>

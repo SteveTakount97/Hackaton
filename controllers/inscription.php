@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once('./models/users.php');
+require_once './models/users.php';
 
 class Inscription {
     
@@ -30,5 +30,11 @@ class Inscription {
                 return "Erreur lors de l'inscription.";
             }
     }
+}
+
+$insctiption = new Inscription();
+
+if ($_GET["action"] && $_GET["action"] === "inscription"){
+    $insctiption->execute();
 }
 ?>

@@ -3,7 +3,7 @@
 session_start();
 
 // j'inclus les fichiers database et le model users afin de lier mes pages
-require_once("./models/users.php");
+require_once "./models/users.php";
 
 // en namespace nous utilisons les "class" pour utiliser notre structure d'objet plus facilement dans les autres fichiers(pages)/dossiers
 class Connect{
