@@ -57,4 +57,3 @@ if($_GET["action"] && $_GET["action"] === "")
     } 
 }
 
-?>
