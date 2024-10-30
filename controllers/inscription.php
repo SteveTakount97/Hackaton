@@ -29,7 +29,7 @@ class Inscription {
                 //message si connexion reussi
                 echo 'Votre inscription a bien été pris en compte';
                 // Redirection à la page d'accueil
-                header('Refresh:2;Location: ../views/acceuil.html');
+                header('Location: ../views/acceuil.html');
                 exit; // Ne pas oublier d'appeler exit() après la redirection
             } else {
                 return "Erreur lors de l'inscription.";
