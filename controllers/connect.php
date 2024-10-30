@@ -18,19 +18,23 @@ class Connect{
         else{
             // dans le cas ou le champ n'est pas vide alors nous prenons l'user
             // filter_var = pour filtrer une variable pour nettoyer les données
-            $user = filter_var($_POST['user']);
+            $user = htmlspecialchars($_POST['user']);
         }
         // même cas de sécurité que pour l'user -> le mot de passe ne doit pas être vide 
         // sinon affichage du message d'erreur
         if(empty(htmlspecialchars($_POST['password']))){
             throw new \Exception("Veuillez saisir le mot de passe");
         }
-        else{
             $password = htmlspecialchars($_POST['password']);
-        }
 
+        $userModel = new User();
+        $resultat = $userModel->userConnect($user, $password);
+        $_SESSION['connect'] = 1;
+        $_SESSION['pseudo'] = $resultat['pseudo'];
+        $_SESSION['id'] = $resultat['id'];
         header('Location: ../views/acceuil.html');
-    }
+        exit;
+        }
 }
 
 $connect = new Connect();

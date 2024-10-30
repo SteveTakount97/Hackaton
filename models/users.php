@@ -44,30 +44,19 @@ class User{
         return $resultat;
     }
 
-    public function UserConnect($user, $password){
+    public function userConnect($pseudo, $password){
         $query = $this->connection->getConnection()->prepare(
             "SELECT * FROM users WHERE pseudo =?"
         );
-        $query->execute([$user]);
+        $query->execute([$pseudo]);
         $resultat = $query->fetch();
 
-        if($query -> rowCount() == 0){
+        if($query -> rowCount() == 0 || $password !== $resultat[$password]){
             throw new \Exception("L'utilisateur n'existe pas, veuillez vérifier vos données ou créer un compte");
-        }
-        else{
-            if(password_verify($password, $resultat['password'])){
-                session_start();
-                $_SESSION['connecte'] = 1;
-                $_SESSION['user'] = $resultat['user'];
-                $_SESSION['id'] = $resultat['id'];
-                header("Location: index.php?action=account");
-                exit;
-            }
-            else{
-                throw new \Exception(("Le mot de passe n'est pas valide"));
-            }
-        }
+        } 
+        return $resultat;
     }
+    
 
     public function EditUser($id, $prenom, $pseudo, $age, $password)
     {
