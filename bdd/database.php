@@ -9,7 +9,7 @@ class Database
     {
         try
         {
-            $dsn = "mysql:host" . DB_HOST . ";port" . DB_PORT . ";dbname" . DB_NAME;
+            $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME;
             $this->pdo = new PDO($dsn, DB_USER, DB_PASS);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $this;
