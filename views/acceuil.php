@@ -18,7 +18,7 @@
                  
                  <?php 
                     if(isset($_SESSION) && !empty($_SESSION)){
-                        echo '<li class="deconnect"><a href="./deconnect.html?action=deconnect">Déconnexion</a></li>';
+                        echo '<li><a href="./deconnect.html?action=deconnect">Déconnexion</a></li>';
                         echo '<li><a href="./profil.html?action=profil">profil</a></li>';
 
                     }
