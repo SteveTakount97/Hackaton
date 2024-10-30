@@ -51,7 +51,7 @@ class User{
         $query->execute([$pseudo]);
         $resultat = $query->fetch();
 
-        if($query -> rowCount() == 0 || $password !== $resultat[$password]){
+        if($query -> rowCount() == 0 || $password !== $resultat['password']){
             throw new \Exception("L'utilisateur n'existe pas, veuillez vérifier vos données ou créer un compte");
         } 
         return $resultat;
