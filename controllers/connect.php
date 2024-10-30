@@ -3,7 +3,6 @@
 session_start();
 
 // j'inclus les fichiers database et le model users afin de lier mes pages
-require_once("./bdd/Database.php");
 require_once("./models/users.php");
 
 // en namespace nous utilisons les "class" pour utiliser notre structure d'objet plus facilement dans les autres fichiers(pages)/dossiers
@@ -31,11 +30,6 @@ class Connect{
         }
 
         header('Location: ../views/acceuil.html');
-
-    }
-    // utilisé pour charger des vues ou des composants
-    public function page(){
-        require_once('./views/connect.php');
     }
 }
 

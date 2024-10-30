@@ -2,7 +2,6 @@
 
 session_start();
 
-require_once('./bdd/database.php');
 require_once('./models/users.php');
 
 class Inscription {
@@ -11,7 +10,6 @@ class Inscription {
 
     public function execute() {
         // Vérification si le formulaire a été soumis
-        if (isset($_POST['submit'])) {
             // Validation des données du formulaire
             if (empty($_POST['prenom']) || empty($_POST['pseudo']) || empty($_POST['password']) || empty($_POST['age'])) {
                 throw new \Exception('Veuillez remplir tous les champs');
@@ -31,7 +29,6 @@ class Inscription {
             } else {
                 return "Erreur lors de l'inscription.";
             }
-        }
     }
 }
 ?>
