@@ -19,7 +19,7 @@ class User{
      public function register($prenom, $age, $pseudo, $password) {
 
         $query = $this->connection->getConnection()->prepare(
-            "INSERT INTO user (prenom, age, pseudo, «password») VALUES (?, ?, ?, ?)"
+            "INSERT INTO user (prenom, age, pseudo, `password`) VALUES (?, ?, ?, ?)"
         );
         $query->execute([$prenom, $age, $pseudo, $password]);
        
