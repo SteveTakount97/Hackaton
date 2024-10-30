@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/asset/css/style.css">
-    <title>Mon Centre Animalier</title>
+    <title>Mon Blog Animalier</title>
 </head>
 <body class="inscription-background">
     <header>
@@ -20,7 +20,7 @@
     </header>
     <main>
         <section>
-            <form action="../controllers/inscription.php" method="post" class="login-form" id="loginform">
+            <form action="../controllers/inscription.php?action=inscription" method="post" class="login-form" id="loginform">
               <h2>Inscription</h2>
                <div>
                   <label for="email">Prenom:</label><br>
@@ -32,7 +32,7 @@
              </div>
              <div>
                 <label for="password">Pseudo:</label><br>
-                <input type="text" id="email" name="pseudo" placeholder="saisir votre pseudo" required>
+                <input type="text" id="pseudo" name="pseudo" placeholder="saisir votre pseudo" required>
              </div>
                <div>
                   <label for="password">Mot de passe:</label><br>
