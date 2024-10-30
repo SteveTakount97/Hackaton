@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,9 +15,17 @@
          </a>
              <nav>
                  <ul class="nav-list">
-                     <li><a href="inscription.html">Inscription</a></li>
-                     <li class="deconnect"><a href="deconnect.html">Déconnexion</a></li>
-                     <li><a href="connect.html">Connexion</a></li>
+                 
+                 <?php 
+                    if(empty(session_start())){
+                        echo '<li><a href="inscription.html">Inscription</a></li>';
+                        echo '<li><a href="connect.html">Connexion</a></li>';
+                    }
+                    else{
+                        echo '<li class="deconnect"><a href="deconnect.html">Déconnexion</a></li>';
+                        echo '<li><a href="profil.html">profil</a></li>';
+                    }
+                 ?>
 
                  </ul>
              </nav> 
@@ -27,3 +37,6 @@
 </body>
 <script src="../public/asset/script/script.js"></script>
 </html>
+
+
+

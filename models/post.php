@@ -15,10 +15,10 @@ class publication{
 
     public function createPost($message){
         $query = $this->connection->getConnection()->prepare(
-            "INSERT INTO 'post'('id', 'message') VALUES(:postId, :message)"
+            "INSERT INTO 'post'('id_message', 'message') VALUES(:postId, :message)"
         );
         $query-> bindParam(':postId', $postId);
-        $query-> bindparam('message', $message);
+        $query-> bindparam(':message', $message);
         $query->execute();
     }
 
@@ -29,5 +29,4 @@ class publication{
         $resultat->execute();
         return $resultat->fetchAll(\PDO::FETCH_ASSOC);
     }
-
 }
