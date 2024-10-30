@@ -18,7 +18,7 @@
                  
                  <?php 
                     if(isset($_SESSION) && !empty($_SESSION)){
-                        echo '<li><a href="./controllers/deconnect.php?action=deconnect">Déconnexion</a></li>';
+                        echo '<li><a href="../controllers/deconnect.php?action=deconnect">Déconnexion</a></li>';
                         echo '<li><a href="./profil.html?action=profil">profil</a></li>';
 
                     }
@@ -33,6 +33,15 @@
     </header>
     <main class="main-background">
         <h1 id="carousel-title">BIENVENU DANS NOTRE BLOG ANIMALIER</h1>
+
+        <?php
+            if(isset($_SESSION) && !empty($_SESSION)){
+                echo '<form class="post" action="submitMessage" method="post">
+                <textarea type="textarea" id="Publication" name="Publication" placeholder="Écrivez votre texte ici..."></textarea>
+                <button type="submit" class="button-deconnexion">Publication</button>
+                </form>';
+            }
+        ?>
     </main>
  
 </body>
