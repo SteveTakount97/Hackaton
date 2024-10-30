@@ -17,13 +17,13 @@
                  <ul class="nav-list">
                  
                  <?php 
-                    if(empty(session_start())){
-                        echo '<li><a href="inscription.html">Inscription</a></li>';
-                        echo '<li><a href="connect.html">Connexion</a></li>';
+                    if(isset($_SESSION) && !empty($_SESSION)){
+                        echo '<li><a href="./inscription.html?action=inscription">Inscription</a></li>';
+                        echo '<li><a href="./connect.html?action=connect">Connexion</a></li>';
                     }
                     else{
-                        echo '<li class="deconnect"><a href="deconnect.html">Déconnexion</a></li>';
-                        echo '<li><a href="profil.html">profil</a></li>';
+                        echo '<li class="deconnect"><a href="./deconnect.html?action=deconnect">Déconnexion</a></li>';
+                        echo '<li><a href="./profil.html?action=profil">profil</a></li>';
                     }
                  ?>
 
