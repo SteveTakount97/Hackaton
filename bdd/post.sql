@@ -11,7 +11,10 @@ CREATE TABLE `post` (
   `id` int NOT NULL AUTO_INCREMENT,
   `message` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `id_message` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `message` (`id_message`),
+  CONSTRAINT `message` FOREIGN KEY (`id_message`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
