@@ -25,7 +25,7 @@ class Connect{
         if(empty(htmlspecialchars($_POST['password']))){
             throw new \Exception("Veuillez saisir le mot de passe");
         }
-            $password = htmlspecialchars($_POST['password']);
+        $password = htmlspecialchars($_POST['password']);
 
         $userModel = new User();
         $resultat = $userModel->userConnect($pseudo, $password);

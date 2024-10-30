@@ -6,8 +6,6 @@ require_once './models/users.php';
 
 class profil {
 
-    
-
     public function edit() {
 
         if(empty($_POST['prenom']) || empty($_POST['pseudo']) || empty($_POST['password'] || empty($_POST['age']))){
@@ -21,9 +19,11 @@ class profil {
             $prenom = $_POST['prenom'];
             $id = $_SESSION['id'];
     
-            
+            // $userModel = new User();
+            // $resultat = $userModel->EditUser($id, $prenom, $pseudo, $age, $password);
+
             header('Location: ../views/profil.html');
-            }
+        }
     }
 
 }
