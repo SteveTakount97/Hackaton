@@ -25,6 +25,21 @@ class profil {
             header('Location: ../views/profil.html');
         }
     }
+    public function createPost(){
+        $id = htmlspecialchars($_SESSION['id']);
+        if(!empty(htmlspecialchars($_POST['message']))){
+            $message = $_POST['message'];
+
+            $publication = new publication();
+            $publication -> connection = new Database();
+            $publication -> createPost($message);
+            header('Location: accueil.php?action=accueil');
+            exit;
+        }
+        else{
+            throw new \Exception('Votre publication ne peut pas être publiée, veuillez la vérifier');
+        }
+    }
 
 }
 
