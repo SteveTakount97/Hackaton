@@ -2,7 +2,6 @@
 
 session_start();
 
-require_once('./bdd/database.php');
 require_once('./models/users.php');
 
 class profil {
@@ -10,7 +9,7 @@ class profil {
 
     public function edit() {
         if(empty($_POST['prenom']) || empty($_POST['pseudo']) || empty($_POST['password'] || empty($_POST['age']))){
-            header('location: ../views/profil.html');
+            header('Location: ../views/profil.html');
         }
 
         $password = htmlspecialchars($_POST['password']);
@@ -20,7 +19,7 @@ class profil {
         $id = $_SESSION['id'];
 
         if ($this->user->EditUser($prenom, $pseudo, $password, $age, $id)) {
-            header('location: ../views/profil.html');
+            header('Location: ../views/profil.html');
             exit;
         }
     }

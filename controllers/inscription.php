@@ -2,7 +2,6 @@
 
 session_start();
 
-require_once('./bdd/database.php');
 require_once('./models/users.php');
 
 class Inscription {
