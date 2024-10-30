@@ -37,4 +37,4 @@ $insctiption = new Inscription();
 if ($_GET["action"] && $_GET["action"] === "inscription"){
     $insctiption->execute();
 }
-?>
+
