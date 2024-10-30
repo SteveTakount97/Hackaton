@@ -12,7 +12,11 @@ class User{
     public string $age;
     public string $prenom;
     
+
     public $connection;
+    public function __construct(){
+        $this->connection = new Database();
+    }
     // Méthode pour enregistrer un nouvel utilisateur
      public function register($prenom, $age, $pseudo, $password) {
 
@@ -31,14 +35,7 @@ class User{
        
     //    // Exécuter la requête et retourner le résultat
     //    return $query->execute();
-}
 
-class UserPost{
-
-    public $connection;
-    public function __construct(){
-        $this->connection = new Database();
-    }
 
     public function userDetails($id){
         $query = $this->connection->getConnection()->prepare(
@@ -106,3 +103,4 @@ class UserPost{
         }
     }
 }
+
