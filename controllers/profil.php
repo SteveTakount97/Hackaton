@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once('./models/users.php');
+require_once './models/users.php';
 
 class profil {
 
@@ -27,9 +27,11 @@ class profil {
     }
 
 }
+
 $profil = new profil();
 
 if($_GET["action"] && $_GET["action"] === "profil"){
     $profil->edit(); 
 }
+
 ?>
