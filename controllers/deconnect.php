@@ -9,4 +9,7 @@ class Deconnection{
         exit;
     }
 }
-
+$deconnect = new Deconnection();
+if($_GET["action"] && $_GET["action"] === "deconnect"){
+    $deconnect -> deco();
+}
