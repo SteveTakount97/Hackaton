@@ -5,7 +5,7 @@ require_once "../bdd/database.php";
 class publication{
 
     public string $id;
-    public string $postId;
+    public string $id_message;
     public string $message;
 
     public $connection;
@@ -15,9 +15,9 @@ class publication{
 
     public function createPost($message){
         $query = $this->connection->getConnection()->prepare(
-            "INSERT INTO 'post'('id_message', 'message') VALUES(:postId, :message)"
+            "INSERT INTO 'post'('id_message', 'message') VALUES(:id_message, :message)"
         );
-        $query-> bindParam(':postId', $postId);
+        $query-> bindParam(':id_message', $postId);
         $query-> bindparam(':message', $message);
         $query->execute();
     }
