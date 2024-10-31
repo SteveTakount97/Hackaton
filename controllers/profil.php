@@ -53,7 +53,7 @@ if($_GET["action"] && $_GET["action"] === "")
     }
     elseif($_GET['action'] === "submitMessage")
     {
-        (new profil()) -> createPostControllers();
+        $profil -> createPostControllers();
     } 
 }
 
