@@ -45,15 +45,9 @@ class profil {
 
 $profil = new profil();
 
-if($_GET["action"] && $_GET["action"] === "")
+if($_GET["action"] && $_GET["action"] === "submitMessage")
 {
-    if($_GET['action'] === "edit")
-    {
-        (new profil()) -> edit();
-    }
-    elseif($_GET['action'] === "submitMessage")
-    {
-        $profil -> createPostControllers();
-    } 
+    $profil -> createPostControllers();
+
 }
 
