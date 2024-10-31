@@ -37,7 +37,18 @@ require_once '../controllers/profil.php';
     </header>
     <main class="main-background">
         <h1 id="carousel-title">BIENVENU DANS NOTRE BLOG ANIMALIER</h1>
+ 
+        <div class="container-main">
 
+        <div class="look-post">
+
+            <?php foreach ($resultat as $key => $value){ ?>
+
+                    <?php $value['message'] ?>
+
+                <?php } ?>
+
+        </div>
         <?php
             if(isset($_SESSION) && !empty($_SESSION)){
                 echo '<form class="post" action="../controllers/profil.php?action=submitMessage" method="post">
@@ -46,14 +57,6 @@ require_once '../controllers/profil.php';
                 </form>';
             }
         ?>
-
-        <div>
-
-            <?php foreach ($resultat as $key => $value){ ?>
-
-                    <?php $value['message'] ?>
-
-                <?php } ?>
 
         </div>
     </main>
