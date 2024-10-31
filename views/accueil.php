@@ -44,7 +44,7 @@ require_once '../controllers/profil.php';
 
             <?php foreach ($resultat as $key => $value){ ?>
 
-                    <?php $value['message'] ?>
+                    <?php echo $value['message'] ?>
 
                 <?php } ?>
 
