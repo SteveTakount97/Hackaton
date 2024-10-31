@@ -32,7 +32,7 @@ class profil {
 
             $publication = new publication();
             $publication -> connection = new Database();
-            $publication -> createPost($message);
+            $publication -> createPost($message, $id);
             header('Location: accueil.php?action=accueil');
             exit;
         }
