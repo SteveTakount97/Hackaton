@@ -13,7 +13,7 @@ class publication{
         $this->connection = new Database();
     }
 
-    public function createPost($message){
+    public function createPost($id_message, $message){
         $query = $this->connection->getConnection()->prepare(
             "INSERT INTO 'post'('id_message', 'message') VALUES(:id_message, :message)"
         );
