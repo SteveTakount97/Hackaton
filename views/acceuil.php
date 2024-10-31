@@ -42,6 +42,16 @@
                 </form>';
             }
         ?>
+
+        <div>
+
+            <?php foreach ($resultat as $key => $value){ ?>
+
+                    <?php $value['message'] ?>
+
+                <?php } ?>
+
+        </div>
     </main>
  
 </body>
