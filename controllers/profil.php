@@ -4,7 +4,7 @@ session_start();
 
 require_once '../models/users.php';
 require_once '../models/post.php';
-require_once '../views/acceuil.php';
+require_once '../views/index.php';
 class profil {
 
     public function edit() {
@@ -34,7 +34,7 @@ class profil {
             $publication = new Publication();
             $publication -> connection = new Database();
             $publication -> createPost($message, $id_message);
-            header('Location: ../views/acceuil.php');
+            header('Location: ../views/index.php');
             exit;
         }
         else{

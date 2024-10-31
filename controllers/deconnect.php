@@ -5,7 +5,7 @@ session_start();
 class Deconnection{
     public function deco(){
         session_destroy();
-        header('Location: ../views/acceuil.php');
+        header('Location: ../views/index.php');
         exit;
     }
 }
