@@ -25,7 +25,7 @@ class profil {
             header('Location: ../views/profil.html');
         }
     }
-    public function createPost(){
+    public function createPostControllers(){
         $id_message = htmlspecialchars($_SESSION['id']);
         if(!empty(htmlspecialchars($_POST['publication']))){
             $message = $_POST['publication'];
@@ -53,7 +53,7 @@ if($_GET["action"] && $_GET["action"] === "")
     }
     elseif($_GET['action'] === "submitMessage")
     {
-        (new profil()) -> createPost();
+        (new profil()) -> createPostControllers();
     } 
 }
 
