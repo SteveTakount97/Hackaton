@@ -15,7 +15,7 @@ class publication{
 
     public function createPost($id_message, $message){
         $query = $this->connection->getConnection()->prepare(
-            "INSERT INTO 'post'('message', 'id_message') VALUES(:message, :id_message)"
+            "INSERT INTO post ('message', 'id_message') VALUES(:message, :id_message)"
         );
         $query-> bindParam(':id_message', $id_message);
         $query-> bindparam(':message', $message);
