@@ -26,13 +26,13 @@ class profil {
         }
     }
     public function createPost(){
-        $id = htmlspecialchars($_SESSION['id']);
+        $id_message = htmlspecialchars($_SESSION['id']);
         if(!empty(htmlspecialchars($_POST['message']))){
             $message = $_POST['message'];
 
             $publication = new publication();
             $publication -> connection = new Database();
-            $publication -> createPost($message, $id);
+            $publication -> createPost($message, $id_message);
             header('Location: accueil.php?action=accueil');
             exit;
         }
