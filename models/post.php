@@ -18,7 +18,7 @@ class publication{
             "INSERT INTO post (message, id_message) VALUES(:message, :id_message)"
         );
         $query-> bindParam(':id_message', $id_message);
-        $query-> bindparam(':message', $message);
+        $query-> bindParam(':message', $message);
         $query->execute();
     }
 
