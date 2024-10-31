@@ -156,3 +156,13 @@ textarea{
 .post{
     width: 220px;
 }
+.look-post{
+    display: flex;
+    position: absolute;
+}
+.container-main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
