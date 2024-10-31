@@ -31,7 +31,7 @@ class profil {
         if(!empty(htmlspecialchars($_POST['publication']))){
             $message = $_POST['publication'];
             echo 'bonjour';
-            $publication = new publication();
+            $publication = new Publication();
             $publication -> connection = new Database();
             $publication -> createPost($message, $id_message);
             header('Location: ../views/acceuil.php');
@@ -43,7 +43,7 @@ class profil {
     }
     public function allPostControllers()
     {
-        $publication = new publication();
+        $publication = new Publication();
         $publication -> connection = new DataBase;
         $publication -> allPost();
 

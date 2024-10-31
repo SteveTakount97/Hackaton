@@ -2,7 +2,7 @@
 
 require_once "../bdd/database.php";
 
-class publication{
+class Publication{
 
     public string $id;
     public string $id_message;
