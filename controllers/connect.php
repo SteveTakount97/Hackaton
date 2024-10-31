@@ -36,3 +36,8 @@ class Connect{
         exit;
         }
 }
+$connect = new Connect();
+
+if($_GET["action"] && $_GET["action"] === "connect"){
+    $connect -> connection();
+}

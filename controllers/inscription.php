@@ -36,4 +36,7 @@ class Inscription {
             }
     }
 }
-
+$inscription = new Inscription();
+if($_GET["action"] && $_GET["action"] === "inscription"){
+    $inscription -> execute();
+}
