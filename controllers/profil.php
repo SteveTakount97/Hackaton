@@ -33,7 +33,7 @@ class profil {
             $publication = new publication();
             $publication -> connection = new Database();
             $publication -> createPost($message, $id_message);
-            header('Location: ../views/acceuil.php?action=acceuil');
+            header('Location: ../views/acceuil.php');
             exit;
         }
         else{
