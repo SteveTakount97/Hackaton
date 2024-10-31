@@ -36,7 +36,7 @@
 
         <?php
             if(isset($_SESSION) && !empty($_SESSION)){
-                echo '<form class="post" action="submitMessage" method="post">
+                echo '<form class="post" action="../controllers/profil.php?action=submitMessage" method="post">
                 <textarea type="textarea" id="publication" name="publication" placeholder="Écrivez votre texte ici..."></textarea>
                 <button type="submit" class="button-deconnexion">Publication</button>
                 </form>';
