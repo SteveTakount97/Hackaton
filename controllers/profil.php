@@ -4,7 +4,7 @@ session_start();
 
 require_once '../models/users.php';
 require_once '../models/post.php';
-
+require_once '../views/acceuil.php';
 class profil {
 
     public function edit() {
@@ -40,6 +40,13 @@ class profil {
         else{
             throw new \Exception('Votre publication ne peut pas être publiée, veuillez la vérifier');
         }
+    }
+    public function allPostControllers()
+    {
+        $publication = new publication();
+        $publication -> connection = new DataBase;
+        $publication -> allPost();
+
     }
 
 }
