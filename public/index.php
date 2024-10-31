@@ -21,4 +21,6 @@ elseif($_GET["action"] && $_GET["action"] === "deconnect"){
     $deconnect -> deco();
 }elseif($_GET["action"] && $_GET["action"] === "inscription"){
     $inscription -> execute();
+}else{
+    header('Location: ../views/acceuil.php');
 }
