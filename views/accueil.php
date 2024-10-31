@@ -40,15 +40,6 @@ require_once '../controllers/profil.php';
  
         <div class="container-main">
 
-        <?php
-            if(isset($_SESSION) && !empty($_SESSION)){
-                echo '<form class="post" action="../controllers/profil.php?action=submitMessage" method="post">
-                <textarea type="textarea" id="publication" name="publication" placeholder="Écrivez votre texte ici..."></textarea>
-                <button type="submit" class="button-deconnexion">Publication</button>
-                </form>';
-            }
-        ?>
-
         <div class="look-post">
 
             <?php foreach ($resultat as $key => $value){ ?>
@@ -58,6 +49,15 @@ require_once '../controllers/profil.php';
                 <?php } ?>
 
         </div>
+        <?php
+            if(isset($_SESSION) && !empty($_SESSION)){
+                echo '<form class="post" action="../controllers/profil.php?action=submitMessage" method="post">
+                <textarea type="textarea" id="publication" name="publication" placeholder="Écrivez votre texte ici..."></textarea>
+                <button type="submit" class="button-deconnexion">Publication</button>
+                </form>';
+            }
+        ?>
+
         </div>
     </main>
  
