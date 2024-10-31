@@ -32,7 +32,7 @@ class Connect{
         $_SESSION['connect'] = 1;
         $_SESSION['pseudo'] = $resultat['pseudo'];
         $_SESSION['id'] = $resultat['id'];
-        header('Location: ../views/index.php');
+        header('Location: ../views/accueil.php');
         exit;
         }
 }
