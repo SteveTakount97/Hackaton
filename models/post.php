@@ -17,7 +17,7 @@ class publication{
         $query = $this->connection->getConnection()->prepare(
             "INSERT INTO 'post'('id_message', 'message') VALUES(:id_message, :message)"
         );
-        $query-> bindParam(':id_message', $postId);
+        $query-> bindParam(':id_message', $id_message);
         $query-> bindparam(':message', $message);
         $query->execute();
     }
