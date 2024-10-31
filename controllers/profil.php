@@ -27,8 +27,8 @@ class profil {
     }
     public function createPost(){
         $id_message = htmlspecialchars($_SESSION['id']);
-        if(!empty(htmlspecialchars($_POST['message']))){
-            $message = $_POST['message'];
+        if(!empty(htmlspecialchars($_POST['publication']))){
+            $message = $_POST['publication'];
 
             $publication = new publication();
             $publication -> connection = new Database();
