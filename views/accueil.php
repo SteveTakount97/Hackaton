@@ -1,7 +1,6 @@
 <?php 
 
-
-require_once "../controllers/profil.php";
+require_once "../session.php";
 
 ?>
 
