@@ -1,6 +1,7 @@
 <?php 
 
 
+require_once "../controllers/profil.php";
 
 ?>
 
@@ -24,6 +25,7 @@
                     if(isset($_SESSION) && !empty($_SESSION)){
                         echo '<li><a href="../controllers/deconnect.php?action=deconnect">Déconnexion</a></li>';
                         echo '<li><a href="./profil.html?action=profil">profil</a></li>';
+                        echo $_SESSION['pseudo'];
 
                     }
                     else{
