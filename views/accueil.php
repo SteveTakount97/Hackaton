@@ -42,15 +42,14 @@ require_once '../controllers/profil.php';
         <div class="container-main">
 
             <div class="look-post">
-
                 <?php
                     if(isset($_SESSION) && !empty($_SESSION))
                     {
                         if (!empty($resultats) && is_array($resultats))
                         {
                             foreach ($resultats as $key => $value)
-                            { 
-                                echo $value['message']  ;?> <br><?php
+                            { ?>
+                              <div class="zone-message"> <?php  echo $value['message']  ;?> <br> </div><?php
                             }
                         }
                     }
