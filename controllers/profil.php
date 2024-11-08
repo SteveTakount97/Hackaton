@@ -46,11 +46,14 @@ class profil {
         $publication = new Publication();
         $publication -> connection = new DataBase;
         $publication -> allPost();
-
     }
 
 }
 $profil = new profil();
 if($_GET["action"] && $_GET["action"] === "submitMessage"){
     $profil -> createPostControllers();
+}
+if(isset($_SESSION) && !empty($_SESSION)){
+    
+    $profil -> allPostControllers();
 }

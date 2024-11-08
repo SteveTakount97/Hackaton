@@ -1,7 +1,7 @@
 <?php 
 
 require_once "../session.php";
-
+require_once '../models/post.php';
 ?>
 
 <!DOCTYPE html>
@@ -46,10 +46,11 @@ require_once "../session.php";
                 <?php
                     if(isset($_SESSION) && !empty($_SESSION))
                     {
-                        foreach ($resultat as $key => $value)
+                        if (!empty($resultat) && is_array($resultat))
+                        {foreach ($resultat as $key => $value)
                         { 
                             echo $value['message'] ;
-                        }
+                        }}
                     }
                 ?>
 
