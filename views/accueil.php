@@ -43,11 +43,13 @@ require_once "../session.php";
 
         <div class="look-post">
 
-            <?php foreach ($resultat as $key => $value){ ?>
-
-                    <?php echo $value['message'] ?>
-
-                <?php } ?>
+            <?php
+                if(isset($_SESSION) && !empty($_SESSION)){
+                    foreach ($resultat as $key => $value)
+                    { 
+                        echo $value['message'] ;
+                    }
+                }?>
 
         </div>
         <?php
