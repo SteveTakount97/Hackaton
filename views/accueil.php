@@ -49,7 +49,7 @@ require_once '../controllers/profil.php';
                         {
                             foreach ($resultats as $key => $value)
                             { ?>
-                              <div class="zone-message"> <?php  echo $value['message']  ;?> <br> </div><?php
+                                <div class="zone-message"> <?php  echo $value['message']  ;?> <br> </div><?php
                             }
                         }
                     }
