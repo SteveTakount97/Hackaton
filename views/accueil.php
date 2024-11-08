@@ -1,7 +1,7 @@
 <?php 
 
 require_once "../session.php";
-require_once '../models/post.php';
+require_once '../controllers/profil.php';
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ require_once '../models/post.php';
                         {
                             foreach ($resultats as $key => $value)
                             { 
-                                echo $value['message'] ;
+                                echo $value['message']  ;?> <br><?php
                             }
                         }
                     }
