@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 
 require_once '../models/users.php';
 require_once '../models/post.php';
