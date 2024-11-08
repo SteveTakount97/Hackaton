@@ -46,9 +46,9 @@ require_once '../models/post.php';
                 <?php
                     if(isset($_SESSION) && !empty($_SESSION))
                     {
-                        if (!empty($resultat) && is_array($resultat))
+                        if (!empty($resultats) && is_array($resultats))
                         {
-                            foreach ($resultat as $key => $value)
+                            foreach ($resultats as $key => $value)
                             { 
                                 echo $value['message'] ;
                             }
