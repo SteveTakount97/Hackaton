@@ -48,7 +48,7 @@ class profil {
 
 }
 $profil = new profil();
-if($_GET["action"] && $_GET["action"] === "submitMessage"){
+if(isset($_GET["action"]) && $_GET["action"] === "submitMessage"){
     $profil -> createPostControllers();
 }
     
