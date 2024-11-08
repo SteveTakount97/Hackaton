@@ -1,7 +1,7 @@
 <?php 
 
 require_once "../session.php";
-
+require_once '../models/post.php';
 ?>
 
 <!DOCTYPE html>
@@ -41,17 +41,22 @@ require_once "../session.php";
  
         <div class="container-main">
 
-        <div class="look-post">
+            <div class="look-post">
 
-            <?php
-                if(isset($_SESSION) && !empty($_SESSION)){
-                    foreach ($resultat as $key => $value)
-                    { 
-                        echo $value['message'] ;
+                <?php
+                    if(isset($_SESSION) && !empty($_SESSION))
+                    {
+                        if (!empty($resultat) && is_array($resultat))
+                        {
+                            foreach ($resultat as $key => $value)
+                            { 
+                                echo $value['message'] ;
+                            }
+                        }
                     }
-                }?>
+                ?>
 
-        </div>
+            </div>
         <?php
             if(isset($_SESSION) && !empty($_SESSION)){
                 echo '<form class="post" action="../controllers/profil.php?action=submitMessage" method="post">
