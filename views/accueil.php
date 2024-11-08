@@ -47,10 +47,12 @@ require_once '../models/post.php';
                     if(isset($_SESSION) && !empty($_SESSION))
                     {
                         if (!empty($resultat) && is_array($resultat))
-                        {foreach ($resultat as $key => $value)
-                        { 
-                            echo $value['message'] ;
-                        }}
+                        {
+                            foreach ($resultat as $key => $value)
+                            { 
+                                echo $value['message'] ;
+                            }
+                        }
                     }
                 ?>
 
