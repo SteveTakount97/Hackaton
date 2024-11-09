@@ -24,7 +24,7 @@ class Publication{
 
     public function allPost(){
         $resultat = $this->connection->getConnection()->prepare(
-            "SELECT * FROM post"
+            "SELECT * FROM post INNER JOIN user ON post.id_message = user.id"
         );
         $resultat->execute();
         return $resultat->fetchAll(\PDO::FETCH_ASSOC);
